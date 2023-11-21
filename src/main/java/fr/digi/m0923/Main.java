@@ -1,5 +1,6 @@
 package fr.digi.m0923;
 
+import fr.digi.m0923.bo.Article;
 import fr.digi.m0923.bo.Fournisseur;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -11,7 +12,7 @@ public class Main {
             EntityManager em = emf.createEntityManager()) {
 
             em.getTransaction().begin();
-
+            /*
             //Création d'un nouveau fournisseur
             Fournisseur fournisseurACreer = new Fournisseur("Sebsy Corp.", "12345");
             em.persist(fournisseurACreer);
@@ -31,6 +32,12 @@ public class Main {
             if (null != fournisseurASupprimer) {
                 em.remove(fournisseurASupprimer);
             }
+            */
+
+            Article article = em.find(Article.class, 2);
+            System.out.println(article.getFournisseur().getRaisonSociale());
+
+
             em.getTransaction().commit();
         }
     }

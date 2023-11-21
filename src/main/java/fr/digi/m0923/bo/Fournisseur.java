@@ -2,6 +2,8 @@ package fr.digi.m0923.bo;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "FOURNISSEUR")
 public class Fournisseur {
@@ -13,6 +15,9 @@ public class Fournisseur {
     private String raisonSociale;
     @Transient
     private String siret;
+
+    @OneToMany(mappedBy = "fournisseur")
+    private Set<Article> articles;
 
     public Fournisseur() {}
 
@@ -43,6 +48,14 @@ public class Fournisseur {
 
     public void setSiret(String siret) {
         this.siret = siret;
+    }
+
+    public Set<Article> getArticles() {
+        return articles;
+    }
+
+    public void setArticles(Set<Article> articles) {
+        this.articles = articles;
     }
 
     @Override
