@@ -10,6 +10,7 @@
       <property name="jakarta.persistence.jdbc.user" value="uk1vum6xebfkrt5n"/>
       <property name="jakarta.persistence.jdbc.password" value="nrSzKhkFrXjsavIqf5Tp"/>
       <property name="jakarta.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
+      <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
 
       <property name="hibernate.show_sql" value="true"/>
       <property name="hibernate.format_sql" value="true"/>

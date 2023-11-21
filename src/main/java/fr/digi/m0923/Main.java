@@ -1,7 +1,9 @@
 package fr.digi.m0923;
 
 import fr.digi.m0923.bo.Article;
+import fr.digi.m0923.bo.Client;
 import fr.digi.m0923.bo.Fournisseur;
+import fr.digi.m0923.bo.Particulier;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -38,6 +40,10 @@ public class Main {
             System.out.println(article.getFournisseur().getRaisonSociale());
 
 
+            Client test = new Particulier();
+            test.setTelephone("060606");
+
+            em.persist(test);
             em.getTransaction().commit();
         }
     }

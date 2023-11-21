@@ -6,11 +6,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "FOURNISSEUR")
-public class Fournisseur {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
-    private Integer id;
+public class Fournisseur extends Client{
     @Column(name="NOM")
     private String raisonSociale;
     @Transient
